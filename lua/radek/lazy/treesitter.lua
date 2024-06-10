@@ -1,4 +1,4 @@
-return {    
+return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -6,7 +6,7 @@ return {
             -- A list of parser names, or "all"
             ensure_installed = {
                "c_sharp", "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash",
+                "jsdoc", "bash", " cpp",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
