@@ -5,10 +5,10 @@ vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Tabs and indentation
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+--Tabs and indentation
+vim.opt.tabstop = 3
+vim.opt.softtabstop = 3
+vim.opt.shiftwidth = 3
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -20,7 +20,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 -- Scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 7
 vim.opt.signcolumn = "yes"
 
 -- Update time
@@ -31,4 +31,3 @@ vim.opt.colorcolumn = "80"
 
 -- File name settings
 vim.opt.isfname:append("@-@")
-

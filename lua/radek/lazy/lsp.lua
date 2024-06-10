@@ -10,14 +10,19 @@ return {
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
 
     config = function()
-        local cmp = require'cmp'
+        local cmp = require 'cmp'
         require("fidget").setup({})
-        require("mason").setup()
+        require("mason").setup({
+            opts = {
+                ensure_installed = {
+                    "prettier"
+                }
+            }
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -28,7 +33,7 @@ return {
                 function(server_name) -- default handler
                     require("lspconfig")[server_name].setup {}
                 end,
-                ["lua_ls"] = function ()
+                ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         settings = {
@@ -63,9 +68,9 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
-            },{
-                    { name = 'buffer' },
-                })
+            }, {
+                { name = 'buffer' },
+            })
         })
         vim.diagnostic.config({
             -- update_in_insert = true,
